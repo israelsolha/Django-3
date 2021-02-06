@@ -6,10 +6,10 @@ ENV PYTHONUNBUFFORED 1
 COPY ./requirements.txt /requirements.txt
 RUN pip install -r /requirements.txt
 
-COPY . /
-WORKDIR /password_generator-project
+COPY personal_portfolio-project /
+WORKDIR /personal_portfolio-project
 
 RUN adduser -D user
 USER user
 
-CMD python ./manage.py runserver 0.0.0.0:8000
+CMD ls -la && pwd && python ./manage.py runserver 0.0.0.0:8000
